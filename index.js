@@ -95,4 +95,28 @@ app.post('/schedule/edit', async (req, res) => {
         })
     })
 })
+app.delete('/device/remove',async (req,res) => {
+    Device.deleteOne({_id:req.body.deviceId}).then(data=>{
+        console.log("delete successful")
+        res.status(200).json({
+            message : "removal done"
+        })
+    })
+})
+app.delete('/accessory/remove',async (req,res) => {
+    Accessory.deleteOne({_id:req.body.accessoryId}).then(data=>{
+        console.log("delete successful")
+        res.status(200).json({
+            message : "removal done"
+        })
+    })
+})
+app.delete('/technician/remove',async (req,res) => {
+    Technician.deleteOne({_id:req.body.technicianId}).then(data=>{
+        console.log("delete successful")
+        res.status(200).json({
+            message : "removal done"
+        })
+    })
+})
 app.listen('5000', () => console.log('server...'))

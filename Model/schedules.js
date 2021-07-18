@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const schedule = mongoose.Schema({
     date : {
-        type : String,
+        type : Date,
         require : true
     },
     companyName : {
