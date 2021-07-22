@@ -112,7 +112,7 @@ app.delete('/accessory/remove',async (req,res) => {
     })
 })
 app.delete('/technician/remove',async (req,res) => {
-    Technician.deleteOne({_id:req.body.technicianId}).then(data=>{
+    Technician.deleteOne({_id: req.query.id}).then(data=>{
         console.log("delete successful")
         res.status(200).json({
             message : "removal done"
