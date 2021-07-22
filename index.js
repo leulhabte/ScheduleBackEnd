@@ -95,4 +95,13 @@ app.post('/schedule/edit', async (req, res) => {
         })
     })
 })
+
+app.delete('/schedue',async (req,res) => {
+    Schedule.deleteOne({_id:req.body.deviceId}).then(data=>{
+        console.log("delete successful", data)
+        res.status(200).json({
+            message : "removal done"
+        })
+    })
+})
 app.listen('5000', () => console.log('server...'))
