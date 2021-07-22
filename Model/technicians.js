@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const technician = mongoose.Schema({
     technicianName : {
         type : String,
-        require : true
+        require : true,
     }
 })
 
